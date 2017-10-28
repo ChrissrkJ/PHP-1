@@ -1,0 +1,62 @@
+#homepage {
+  font-family: 'Aial', sans-serif;
+  text-align: center;
+}
+
+  h1 {
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+
+
+  .menu{
+  width: 50%;
+  }
+
+  .contenu {
+    width: 80%;
+  }
+
+  .tab {
+    margin-top: 30px;
+    }
+
+    img {
+      width: 40%;
+    }
+    th{
+      text-align: center;
+    }
+    td {
+     width: 20% ;
+     text-align : center;
+    }
+
+    #sidebar{
+      width:25%;
+      background:#bbb;
+      margin-top: 30px;
+    }
+
+    .contact{
+      width:80%;
+    }
+.stagiaires{
+  text-transform: capitalize;
+}
+
+.fail {
+  color: red;
+}
+
+.erreur {
+  color: orange;
+}
+
+.echec {
+  color: pink;
+}
+
+.sconfitta {
+  color: brown;
+}
