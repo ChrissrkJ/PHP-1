@@ -8,18 +8,17 @@ $stagiaires =listTrainees(); //appelle la fonction qui est dans datasource
 ?>
 <!--HEADER--->
 <?php include("header.php")?>
-<div class="container contenu">
-  <div class="row">
+
     <div class="col-md-9 tab">
       <h2>Listes des stagiaires</h2>
       <table class="table table-striped table-border">
-      <tr>
-        <th>Prénom</th>
-        <th>Nom</th>
-        <th>Totem</th>
-        <th>Note</th>
-        <th>Moyenne</th>
-      </tr>
+        <tr>
+          <th>Prénom</th>
+          <th>Nom</th>
+          <th>Totem</th>
+          <th>Note</th>
+          <th>Moyenne</th>
+        </tr>
 
       <?php /* autre moyens :
         for ($i = 0; $i<sizeof($stagiaires); $i++){
@@ -30,6 +29,7 @@ $stagiaires =listTrainees(); //appelle la fonction qui est dans datasource
       <?php
         foreach ($stagiaires as $element) {
           $average = average($element['notes'], 2);
+
 
           echo "<tr>";
           echo "<td>".firstCap($element["prenom"]) ."</td>";
@@ -42,7 +42,7 @@ $stagiaires =listTrainees(); //appelle la fonction qui est dans datasource
           if ($average < 10 && $average != AUCUNE_NOTE_MSG) {
             //echo '<td style="color:'.ERROR_COLOR.'">' . $moyenne . '</td>';
             echo '<td class="'.ERROR_CLASS.'">' . $average . '</td>';
-          } else {
+          }else {
             echo '<td>' . $average . '</td>';
           }
           echo "</tr>";
@@ -50,13 +50,9 @@ $stagiaires =listTrainees(); //appelle la fonction qui est dans datasource
       ?>
     </table>
     </div>
-    <div id="sidebar" class="col-md-3">
-      <h4 class="sideTitle">Top 3 des meilleurs stagiaires : </h4>
-      <?php include("sidebar.php")?>
-    </div>
-  </div>
-</div>
 
+    <!--SIDEBAR_-->
+    <?php include("sidebar.php")?>
 
 <!--FOOTER--->
 <?php include ("footer.php") ?>

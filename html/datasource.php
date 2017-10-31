@@ -7,7 +7,7 @@ function listTrainees() { //fonction qui retourne les données de stagiaires
       "nom" => "abecassis",
       "prenom" => "stéphane",
       "totem"=>"stephane.jpg",
-      "notes" =>[8,5,11],
+      "notes" =>[20,20,11],
       "password"=>"ab_step17",
     ),
     array(
@@ -31,7 +31,7 @@ function listTrainees() { //fonction qui retourne les données de stagiaires
       "nom" => "jafari",
       "prenom" => "sajjad",
       "totem"=>"sajjad.jpg",
-      "notes" =>[17,15,19],
+      "notes" =>[17,13,19],
       "password"=>"ab_sajj17",
     ),
     array(
@@ -39,7 +39,7 @@ function listTrainees() { //fonction qui retourne les données de stagiaires
       "nom" => "françois",
       "prenom" => "pelé",
       "totem"=>"francois.jpg",
-      "notes" =>[11,7,18],
+      "notes" =>[20,7,18],
       "password"=>"fr_pele17",
     ),
     array(
@@ -71,7 +71,7 @@ function listTrainees() { //fonction qui retourne les données de stagiaires
       "nom" => "jessy",
       "prenom" => "vautour",
       "totem"=>"jessy.jpg",
-      "notes" =>[19,13,12],
+      "notes" =>[19,13,19],
       "password"=>"je_vaut17",
     ),
     array(
@@ -98,4 +98,33 @@ function traineeId($id) {
   }
   return $trainee;
 }
+
+function traineeName($nom) {
+  //@IN integer
+  //@OUT an array() || NULL
+  $trainee = NULL;//valeur initiale
+  foreach(listTrainees() as $element){
+    if ($element["nom"] == $nom){
+      $trainee = $element; //$element sera un tableau
+      break; //sortie de boucle.
+    }
+  }
+  return $trainee;
+}
+
+function traineeMdp($mdp) {
+  //@IN integer
+  //@OUT an array() || NULL
+  $trainee = NULL;//valeur initiale
+  foreach(listTrainees() as $element){
+    if ($element["password"] == $mdp){
+      $trainee = $element; //$element sera un tableau
+      break; //sortie de boucle.
+    }
+  }
+  return $trainee;
+}
+
+
+
  ?>

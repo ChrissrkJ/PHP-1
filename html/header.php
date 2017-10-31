@@ -15,3 +15,6 @@ include("config.php");
   <body id="homepage">
     <h1>Formation PHP</h1>
   <?php include("menu.php"); ?>
+
+  <div class="container contenu">
+    <div class="row">

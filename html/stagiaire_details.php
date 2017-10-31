@@ -17,9 +17,10 @@ if(isset($_GET["id"])){
 }else {
   echo "Paramètre id manquant";
 }
-
-
 ?>
+
+
+<?php include("sidebar.php")?>
 
 
 <?php

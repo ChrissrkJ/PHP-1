@@ -23,10 +23,9 @@ include('header.php');
       </div>
     </form>
   </div>
-  <div id="sidebar" class="col-md-3">
-    <h4 class="sideTitle">Top 3 des meilleurs stagiaires : </h4>
+
     <?php include("sidebar.php")?>
-  </div>
+
 </div>
 
 

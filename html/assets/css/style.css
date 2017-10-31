@@ -3,44 +3,64 @@
   text-align: center;
 }
 
-  h1 {
+h1 {
     text-transform: uppercase;
     font-weight: bold;
   }
 
-
-  .menu{
+.menu{
   width: 50%;
-  }
+}
 
-  .contenu {
-    width: 80%;
-  }
+.contenu {
+    width: 85%;
+}
 
-  .tab {
+.tab {
     margin-top: 30px;
-    }
+}
 
-    img {
+img {
       width: 40%;
-    }
-    th{
-      text-align: center;
-    }
-    td {
-     width: 20% ;
-     text-align : center;
+}
+
+th{
+    text-align: center;
+}
+
+td {
+  width: 20% ;
+  text-align : center;
     }
 
-    #sidebar{
-      width:25%;
-      background:#bbb;
-      margin-top: 30px;
-    }
+#sidebar{
+  width:25%;
+  background:#bbb;
+  border-radius:5px;
+  margin-top: 30px;
+  text-align: left;
+}
 
-    .contact{
-      width:80%;
-    }
+.top3{
+  color:#4e5bf0;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.contact{
+  width:80%;
+  }
+  
+#foot{
+    margin-top: 60px;
+    background-color: #aac2ce;
+}
+
+
+
+
+
+
 .stagiaires{
   text-transform: capitalize;
 }
