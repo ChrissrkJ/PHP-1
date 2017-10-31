@@ -1,0 +1,143 @@
+Sur apach : on peut créer plusieurs dossier de site avec chacun son index.php
+
+APACH ne gère pas les BDD
+Il écrit des fichiers, il reçoit des donner, il peut écrir sur les système des fihciers. il l'enregistre sur un fichier texte les donnés qu'on a écrit.
+
+PBM:pour retrouver les infos il faut parse in les éléments.
+
+SERVEUR: persister des données :les choses reçus sont gardées.
+
+PHP dispose de toutes une arsenal de fonction comme write, open .. ecrire ouvir ou modifier des fichiers.
+>> mais pas explorables via des requete avec filtre ou autre.
+
+
+DONC :
+Nécessité de recourir à un autre outils complémentaire avec le serveur:
+>>> Serveur DB (database)
+
+on a installé APACH, MySql serveur, et PHP
+
+association apach + MysQl avec intermédiaire PHP : php a des fonctions qui peuvent interroger DB
+
+Il y a d'autres logiciels de type serveurs web :
+-oracle
+-mongo DB
+-microsoft SQL serveur (MSSQL)(bd relationnel)
+-Maria DB
+-PostGrez (BD relationnel)
+
+
+Couple de logiciel qui fonctionne bien :
+
+PHP & MySql
+
+MEAN : Mango(bdd) Express(Server) Angular(Js) Node > dominant JAVASCRIPT
+>> SPA : single page application/logiciel pour navigateur/plus rapide/ tout déplacer vers coté client et libérer le serveur.
+--------------------------------------------------------
+
+MSQL:
+
+
+terminal :
+se connecter a mysql via root
+> mysql -uroot -p
+> entrer le mot de passe
+> mysql> show databases;
+-----montrer le chéma de la BD
+> exit : sortir de mysql
+
+
+créer une BD:
+> mysql> create database quizz;
+
+
+1-Installer PHPMyAdmmin : administrer des bd mysql
+fonctionne via le navigateur
+interface de gestion visuel graphique, pour administrer nos données.
+
+> sudo apt install phpmyadmin
+apache2 : ok
+
+httt://localhost/phpmyadmin : pour voir si c'est accessible.
+
+Sinon:
+2 -Configuration pour l'avoir dans le navigateur :
+> ls -l
+> cd sites-available/
+> cd /etc/apache2/
+
+
+> sudo ln -s /etc/phpmyadmin/apache.conf /etc/apache2/conf-available/phpmyadmin.conf
+> service apache2 reload
+> sudo a2enconf phpmyadmin.conf
+
+
+----------------------------------------------------------------------
+
+MYSQL:
+CRUD : Create Read Update Delete
+Plusieurs bibliothèque qui peuvnet intéragir avec MySQL:
+- mysqli : langage procédurale (comme array, splice):
+    ex: mysqli_connect() pour la connexion
+- PDO (style Orienté Objet) pdo>connect()
+
+
+-------------------------------------
+Programmation OO
+objet : manière de faire cohabiter des types d'info
+utilise des classes:
+
+Classes : superfonction
+outils qui permet de produire en masse/fabrique/
+Objet ensemble de propriété et de methode.
+
+METHODE ->query()
+Une des actions les plus importante fournie par la classe PDO.
+methode query dans une boucle permet d'obtenir la ligne sql suivante converti en objet ou tableau assoc ou tableau num.
+
+PDO::FETCH_ASSOC > permet d'avoir un retour de tableau associatif uniquement
+PDO::FETCH_NUM > tableau numérique
+PDO::FETCH_OBJ > transforme le retour en objet. !!!! attention l'appel des propriétés (propriété-> valeur)
+
+---------------------------------------------------------------------------------
+
+31 OCTOBRE
+
+Application de type QCM
+
+Fonctionnalité :
+-Enregistrement de questions/réponses(systee de BDD)
+-Génération de questionnaires par catégorie et niveau de difficulté
+-Affichage des résultats
+
+Structure du QCM
+-1 question (Title, catégiry, level)
+-plusieurs réponses (body (corps de la réponse, correct(booléen))
+
+>>>> Formulaire qui permet de bâtir les questions et les réponse : mécanisme d'enregistrement.
+>>>> selon mes choix et mes critères on génére un questionnaire.
+
+
+                                    ________________________________________
+-Enregistrement de questions/réponses(systee de BDD):
+
+
+1- QUESTIONS :
+Mysql : créer une tables question avec 4 colonnes : id / title / category /level
+
+Sérialisation : les différentes réponse sont osus forme d'une longue chaine de Kr qu'on peut éclater enplusieurs  fonction php : explode()
+
+
+2- FORMULAIRE:
+Application : un seul point d'entrée : index.php > va piloter l'appli par un systeme de rootage.
+- faire un chargement dynamique de la page sans créer différent fichier pour chaque page.
+>>> utiliser paramètre url et l'include.
+
+>>> structure MVC : Modele View Controler
+par rapport à monparamètre en url je veux que tu m'execute une fonction.
+Créer un fichier séparé pour le routage
+
+
+Requête préparée :
+
+-> prepare()

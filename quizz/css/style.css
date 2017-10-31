@@ -1,0 +1,49 @@
+#homepage,#homepage input, #homepage select{
+  background-color: #1b1a23;
+  color:white;
+}
+#homepage .row{
+  margin-top:15px;
+}
+#homepage h1{
+  text-align: center;
+}
+
+#homepage .menu {
+  color: white;
+  text-transform: uppercase;
+
+}
+
+
+#homepage .menu:hover{
+  background-color: #05a0a1;
+  border: none;
+}
+#homepage .ulMenu:hover {
+  border-bottom: 1px solid #05a0a1;
+
+}
+
+#homepage .listQuest{
+  background-color: #05a0a1;
+}
+#homepage .playBlock{
+  background-color: #05a0a1;
+}
+
+
+#homepage .addQuest {
+  width:80%;
+}
+
+#homepage select{
+  border-radius: 5px;
+  border: 1px solid white;
+  height: 30px;
+}
+
+#homepage .container {
+  margin-top: 25px;
+  width: 80%;
+}
